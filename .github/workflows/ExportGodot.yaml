@@ -115,6 +115,6 @@ jobs:
           apiToken: ${{ secrets.CF_API_KEY }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
           projectName: gdlearn
-          directory: build/web
+          directory: build/web/main
           branch: main
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
