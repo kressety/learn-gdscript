@@ -28,7 +28,6 @@ jobs:
           lfs: true
       - run: ./run prepare:ci
       - run: ./run export:linux
-      - run: ./run push:linux
       - name: Artifact
         uses: actions/upload-artifact@v1
         with:
@@ -54,7 +53,6 @@ jobs:
           lfs: true
       - run: ./run prepare:ci
       - run: ./run export:windows
-      - run: ./run push:windows
       - name: Artifact
         uses: actions/upload-artifact@v1
         with:
@@ -80,7 +78,6 @@ jobs:
           lfs: true
       - run: ./run prepare:ci
       - run: ./run export:osx
-      - run: ./run push:osx
       - name: Artifact
         uses: actions/upload-artifact@v1
         with:
@@ -108,7 +105,6 @@ jobs:
       - run: ./run prepare:ci
       #- if: ${{ github.ref == 'refs/heads/release' }}
       - run: ./run export:web
-      - run: ./run push:web
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@v1.5.0
         with:
