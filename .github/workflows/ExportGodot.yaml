@@ -104,6 +104,8 @@ jobs:
           lfs: true
       - name: Setup Node.js environment
         uses: actions/setup-node@v4.0.1
+        with: 
+          node-version: 18.x
       - run: ./run prepare:ci
       #- if: ${{ github.ref == 'refs/heads/release' }}
       - run: ./run export:web
