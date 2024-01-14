@@ -5,7 +5,7 @@ signal translation_changed()
 const I18N_ROOT := "res://i18n"
 const PO_EXTENSION := "po"
 # OS.get_locale() is available, if we want to guess the language based on the OS setting.
-const DEFAULT_LOCALE := "en"
+const DEFAULT_LOCALE := "zh_Hans"
 const SUPPORTED_LOCALES := [
 	"en",
 	"es",
@@ -14,6 +14,7 @@ const SUPPORTED_LOCALES := [
 	"pt",
 	"pt_BR",
 	"tr",
+	"zh_Hans"
 ]
 
 var current_language := DEFAULT_LOCALE setget set_language
