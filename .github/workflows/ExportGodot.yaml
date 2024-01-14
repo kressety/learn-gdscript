@@ -109,10 +109,12 @@ jobs:
       #- if: ${{ github.ref == 'refs/heads/release' }}
       - run: ./run export:web
       - run: ./run push:web
-      - name: Deploy to GitHub Pages 🚀
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@v1.5.0
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: build/web
-          clean: false
+          apiToken: ${{ secrets.CF_API_KEY }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          projectName: gdlearn
+          directory: build/web
+          branch: main
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
